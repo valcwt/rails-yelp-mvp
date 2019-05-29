@@ -5,7 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts 'cleaning database...'
+restaurant.destroy_all
 dishoom = Restaurant.create!(
+
   {
     name:         'Dishoom',
     address:      '7 Boundary St, London E2 7JE',

@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
- before_action :set_restaurant, only: [:show]
+ before_action :set_restaurant, only: [:show, :edit, :destroy, :update]
 
  def index
     @restaurants = Restaurant.all
@@ -11,7 +11,25 @@ class RestaurantsController < ApplicationController
   def new
     @restaurant = Restaurant.new
   end
+  def create
+    @restaurant = Restaurant.new(restaurant_params)
+    @restaurant.save
+    redirect_to @restaurant
+  end
 
+  def edit
+  end
+
+  def update
+    @restaurant.update(restaurant_params)
+    redirect_to restaurant_path(restaurant_params)
+  end
+
+  def destroy
+  @restaurant.destroy
+
+  redirect_to restaurants_path
+  end
 
   private
 

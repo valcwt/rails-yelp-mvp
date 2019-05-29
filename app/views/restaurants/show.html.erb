@@ -16,5 +16,6 @@
   <strong>Category:</strong>
   <%= @restaurant.category %>
 </p>
-
+ <%= link_to 'Destroy', restaurant_path(@restaurant), method: :delete %>
 <%= link_to 'back', restaurants_path %>
+<%= link_to 'edit', edit_restaurant_path %>
